@@ -1,0 +1,39 @@
+@import '../utils/variables';
+@import '../utils/mixin';
+@import '../base/general';
+
+footer {
+    width : 100%;
+    background-color: map-get($color, bg-footer);
+    padding: 20px;
+
+    h2{
+        //padding: 10px 0px;
+        margin: 0 0 10px 0;
+        font-family: map-get($font, title), 'Comic Sans Ms', 'Comic Sans', sans-serif;
+        color: white;
+        font-size: 14px;
+    }
+
+    ul {
+        list-style: none;
+        li {
+            margin: 5px 0;
+            font-size: 13px;
+
+            i {
+                font-size: 10px;
+                width: 10px;
+                margin-right: 10px;
+            }
+        }
+    }
+    
+    a{
+        color: white;
+        &:hover {
+            text-decoration: underline;
+        }
+
+    }
+}
