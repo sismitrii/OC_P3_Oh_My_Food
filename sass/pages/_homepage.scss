@@ -1,0 +1,117 @@
+@import '../utils/variables';
+@import '../utils/mixin';
+
+#localisation {
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+    width: 100%;
+    font-size: 16px;
+    background-color: map-get($color, bg-localisation);
+    text-align: center;
+    box-shadow : 0px 10px 10px -10px #AEAEAE inset; 
+
+    @media (min-width:768px) {
+        width: 65%;
+        height: 70px;
+    }
+    i {
+        padding: 17px;
+        font-size: 16px;
+    }
+}
+
+#description {
+    width: 100%;
+    @include flex-center;
+    flex-direction: column;
+    background-color: map-get($color, bg-section-grey);
+    text-align: center;
+    @include padding-section;
+
+    h1 {
+        width: 70%;
+        margin: 10px;
+        font-size: 24px;
+        font-weight: 600;
+    }
+
+    p {
+        font-size: 18px;
+        font-weight: 300;
+        opacity: 0.6;
+    }
+
+    button {
+        padding: 15px;
+        margin: 30px;
+        border-radius: 30px;
+        outline: none;
+        border: none;
+        font-size: 16px;
+        color: white;
+        background: linear-gradient( 175deg, map-get($color, secondary), map-get($color, primary));
+        box-shadow: 5px 5px 5px darken(map-get($color, bg-section-grey), 10);
+    }
+}
+
+#steps {
+    @include padding-section;
+
+    ol {
+        display: flex;
+
+        flex-direction: column;
+        list-style: none;
+        font-size: 14px;
+
+        .step {
+            position: relative;
+            display: flex;
+            align-items: center;
+            padding: 25px;
+            margin: 0px 0px 20px 12px;
+            background-color:map-get($color, bg-section-grey);
+            border-radius: 20px;
+            box-shadow: 3px 5px 8px map-get($color, bg-localisation );
+
+            &:hover {
+                background-color: lighten(map-get($color, primary), 35);
+
+                i {
+                    color: map-get($color, primary );
+                }
+            }
+
+            .step__purple {
+                position: absolute;
+                left: -10px;
+                width: 25px;
+                height: 25px;
+                border-radius: 25px;
+                color: white;
+                font-size: 14px;
+                background-color: map-get($color, primary);
+                @include flex-center;
+            }
+            i {
+                width: 20px;  // in order to have all the text aligned
+                margin: 0 20px 0 10px;
+                color: #7E7E7E;
+                font-size: 18px;
+            }
+
+            p {
+                font-size: 16px;
+                font-weight: 500;
+            }
+        }
+    }
+}
+
+#restaurants i {
+    font-size: 30px;
+}
+
+
+

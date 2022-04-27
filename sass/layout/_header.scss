@@ -1,0 +1,23 @@
+header {
+    @media (min-width:768px){
+        width: 35%;
+        float: left;
+        padding : 0px;
+        clear: both;
+        height: 70px;
+    }
+
+    img {
+        width: 100%;
+        object-fit: contain;
+        height: 28px;
+        margin: 20px 0 10px;
+
+
+        @media (min-width:768px) {
+            height: 35px;
+            margin: 15px 0;
+            padding: 0;
+        }
+    }
+}

@@ -1,0 +1,145 @@
+*, ::before, ::after {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-family: "Roboto";
+}
+
+h2 {
+  margin: 25px 0px;
+}
+
+@media (min-width: 768px) {
+  header {
+    width: 35%;
+    float: left;
+    padding: 0px;
+    clear: both;
+    height: 70px;
+  }
+}
+header img {
+  width: 100%;
+  object-fit: contain;
+  height: 28px;
+  margin: 20px 0 10px;
+}
+@media (min-width: 768px) {
+  header img {
+    height: 35px;
+    margin: 15px 0;
+    padding: 0;
+  }
+}
+
+#localisation {
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
+  width: 100%;
+  font-size: 16px;
+  background-color: #EAEAEA;
+  text-align: center;
+  box-shadow: 0px 10px 10px -10px #AEAEAE inset;
+}
+@media (min-width: 768px) {
+  #localisation {
+    width: 65%;
+    height: 70px;
+  }
+}
+#localisation i {
+  padding: 17px;
+  font-size: 16px;
+}
+
+#description {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background-color: #F6F6F6;
+  text-align: center;
+  padding: 30px 20px;
+}
+#description h1 {
+  width: 70%;
+  margin: 10px;
+  font-size: 24px;
+  font-weight: 600;
+}
+#description p {
+  font-size: 18px;
+  font-weight: 300;
+  opacity: 0.6;
+}
+#description button {
+  padding: 15px;
+  margin: 30px;
+  border-radius: 30px;
+  outline: none;
+  border: none;
+  font-size: 16px;
+  color: white;
+  background: linear-gradient(175deg, #FF79DA, #9356DC);
+  box-shadow: 5px 5px 5px #dddddd;
+}
+
+#steps {
+  padding: 30px 20px;
+}
+#steps ol {
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+  font-size: 14px;
+}
+#steps ol .step {
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding: 25px;
+  margin: 0px 0px 20px 12px;
+  background-color: #F6F6F6;
+  border-radius: 20px;
+  box-shadow: 3px 5px 8px #EAEAEA;
+}
+#steps ol .step:hover {
+  background-color: #f2eafb;
+}
+#steps ol .step:hover i {
+  color: #9356DC;
+}
+#steps ol .step .step__purple {
+  position: absolute;
+  left: -10px;
+  width: 25px;
+  height: 25px;
+  border-radius: 25px;
+  color: white;
+  font-size: 14px;
+  background-color: #9356DC;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#steps ol .step i {
+  width: 20px;
+  margin: 0 20px 0 10px;
+  color: #7E7E7E;
+  font-size: 18px;
+}
+#steps ol .step p {
+  font-size: 16px;
+  font-weight: 500;
+}
+
+#restaurants i {
+  font-size: 30px;
+}
+
+/*# sourceMappingURL=style.css.map */

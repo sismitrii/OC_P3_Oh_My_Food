@@ -1,0 +1,19 @@
+{
+  "name": "oh_my_food",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "sass": "sass --watch ./sass/main.scss:./css/style.css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sismitrii/OC_P3_Oh_My_Food.git"
+  },
+  "author": "Guerin Florian",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sismitrii/OC_P3_Oh_My_Food/issues"
+  },
+  "homepage": "https://github.com/sismitrii/OC_P3_Oh_My_Food#readme"
+}
