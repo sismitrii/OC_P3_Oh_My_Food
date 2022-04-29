@@ -1,14 +1,11 @@
 @import './variables';
 
 @keyframes heart-anim {
-    from {
-      background-size: 100%;
-    }
 
     to {
       color: transparent;
-      background-image: linear-gradient(0deg, map-get($color, primary) 0%, map-get($color, secondary) 100%);
-      background-size: 100%;
+      background-image: linear-gradient(0deg, map-get($color, secondary) 0%, map-get($color, primary) 100%);
       -webkit-background-clip: text;
+      transform: scale(1.2);
     }
 }

@@ -1,7 +1,11 @@
 @import '../utils/variables';
 
-@mixin padding-section {
+@mixin padding-section-mobile {
     padding: 30px 20px;
+}
+
+@mixin padding-section-tablet {
+    padding: 10px 30px 30px;
 }
 
 @mixin flex-center {

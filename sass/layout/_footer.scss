@@ -13,13 +13,28 @@ footer {
         font-family: map-get($font, title), 'Comic Sans Ms', 'Comic Sans', sans-serif;
         color: white;
         font-size: 14px;
+
+        @media (min-width : $breakpoint-tablet) {
+            text-align: center;
+            font-size: 30px;
+        }
     }
+
 
     ul {
         list-style: none;
+
+        @media (min-width: $breakpoint-tablet) {
+            width: 90%;
+            margin:20px auto 10px;
+            display: flex;
+            justify-content: space-around;
+        }
         li {
             margin: 5px 0;
             font-size: 13px;
+
+
 
             i {
                 font-size: 10px;

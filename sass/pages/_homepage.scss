@@ -2,25 +2,49 @@
 @import '../utils/mixin';
 @import '../utils/keyframes';
 
+/*============================================================================*/
+/*------------------------------- Localisation -------------------------------*/ 
+/*============================================================================*/
 #localisation {
+    position: relative;
     display: flex;
     justify-content: center;
     align-items: baseline;
     width: 100%;
+    padding: 17px;
     font-size: 16px;
     background-color: map-get($color, bg-localisation);
     text-align: center;
     box-shadow : 0px 10px 10px -10px #AEAEAE inset; 
 
-    @media (min-width:768px) {
-        width: 65%;
-        height: 70px;
+    @media (min-width:$breakpoint-desktop) {
+        position: absolute;
+        top : 20px;
+        right: 8%;
+        width: 300px;
+        height: 50px;
+        font-size: 20px;
+        box-shadow: none;
+        @include border-radius;
+
+
     }
     i {
-        padding: 17px;
-        font-size: 16px;
+        position: absolute;
+        left: 50% ;
+        transform: translateX(-80px);
+        padding-right: 17px;
+        
+        @media (min-width: $breakpoint-desktop){
+            transform: translateX(-100px);
+        }
     }
 }
+
+
+/*============================================================================*/
+/*------------------------------- Description --------------------------------*/ 
+/*============================================================================*/
 
 #description {
     width: 100%;
@@ -28,7 +52,7 @@
     flex-direction: column;
     background-color: map-get($color, bg-section-grey);
     text-align: center;
-    @include padding-section;
+    @include padding-section-mobile ;
 
     h1 {
         width: 70%;
@@ -52,19 +76,39 @@
         font-size: 16px;
         color: white;
         background: linear-gradient( 175deg, map-get($color, secondary), map-get($color, primary));
-        box-shadow: 5px 5px 5px darken(map-get($color, bg-section-grey), 10);
+        box-shadow: 3px 3px 8px darken(map-get($color, bg-section-grey), 10);
+        transition: all 150ms ease-in-out;
+        cursor: pointer;
+
+        &:hover {
+            transform: translateY(-4px);
+            box-shadow: 8px 8px 5px darken(map-get($color, bg-section-grey), 10);
+        }
     }
 }
 
+/*============================================================================*/
+/*------------------------------------ Steps ---------------------------------*/ 
+/*============================================================================*/
+
 #steps {
-    @include padding-section;
+    @include padding-section-mobile;
+
+    @media (min-width: $breakpoint-tablet){
+        @include padding-section-tablet;
+    }
 
     ol {
+        width: 100%;
         display: flex;
-
         flex-direction: column;
         list-style: none;
         font-size: 14px;
+
+        @media (min-width : $breakpoint-tablet){
+            flex-flow: row wrap;
+            justify-content: space-between;
+        }
 
         .step {
             position: relative;
@@ -74,7 +118,20 @@
             margin: 0px 0px 20px 12px;
             background-color:map-get($color, bg-section-grey);
             border-radius: 20px;
-            box-shadow: 3px 5px 8px map-get($color, bg-localisation );
+            text-align: center;
+            box-shadow: 3px 5px 8px map-get($color, bg-localisation);
+            transition: all 250ms ease-in-out;
+            cursor: pointer;
+
+            &:hover {
+                transform: scale(1.05);
+            }
+
+            @media (min-width: $breakpoint-tablet){
+                width: 30%;
+                justify-content: center;
+                margin: 0px 0px 30px;
+            }
 
             &:hover {
                 background-color: lighten(map-get($color, primary), 35);
@@ -94,25 +151,61 @@
                 font-size: 14px;
                 background-color: map-get($color, primary);
                 @include flex-center;
+
+                @media (min-width : $breakpoint-tablet){
+                    top : -10px;
+                    left: 50%;
+                    transform: translateX(-50%);
+                }
             }
             i {
-                width: 20px;  // in order to have all the text aligned
-                margin: 0 20px 0 10px;
+                position: absolute;
+                left: 30px; 
                 color: #7E7E7E;
                 font-size: 18px;
+                @media (min-width: $breakpoint-tablet){
+                    left: 20px;
+                }
             }
 
             p {
                 font-size: 16px;
                 font-weight: 500;
+                padding-left: 45px;
+                @media (min-width: $breakpoint-tablet ) {
+                    padding-left: 0;
+                    width: 74%;
+                } 
             }
         }
     }
 }
 
+/*============================================================================*/
+/*------------------------------- Restaurants --------------------------------*/ 
+/*============================================================================*/
+
 #restaurants {
-    @include padding-section;
+    @include padding-section-mobile;
     background-color: map-get($color, bg-section-grey);
+
+    @media (min-width : $breakpoint-tablet){
+        @include padding-section-tablet;
+    }
+
+    .restaurant-cards {
+        @include flex-center ;
+        flex-direction: column;
+
+        @media (min-width : $breakpoint-tablet){
+            flex-flow: row wrap;
+            justify-content: space-between;
+        }
+    }
+
+
+
+
 }
 
 .restaurant-card {
@@ -122,8 +215,18 @@
     margin-bottom: 20px;
     background-color: white;
     box-shadow: 3px 5px 8px map-get($color, bg-localisation );
+    transition: all 250ms ease-in-out;
     @include border-radius ;
 
+    @media (min-width : $breakpoint-tablet){
+        width: 48%;
+        margin-bottom: 40px;
+    }
+
+    &:hover {
+        box-shadow: 4px 6px 10px darken(map-get($color, bg-localisation), 10);
+        transform: scale(1.03);
+    }
 
     a {
         width: 100%;
@@ -133,12 +236,22 @@
         height: 250px;
         @include border-radius ;
 
+        @media (min-width: $breakpoint-desktop) {
+            height: 400px;
+        }
+
         img {
             width: 100%;
             height: 69%;
             object-fit : cover;
             @include border-radius ($radius : 0px);
+
+            @media (min-width: $breakpoint-desktop) {
+                height: 81%;
+            }
         }
+
+        
     }
 
     &__new-logo {
@@ -150,8 +263,7 @@
         border-radius: 3px;
         font-size: 14px;
         font-weight: 500;
-        color : darken(map-get($color, tertiary), 40);
-        
+        color : darken(map-get($color, tertiary), 40);   
 
     }
 
@@ -161,15 +273,18 @@
         align-items: flex-start;
         margin: 15px;
 
-        &__like {
-            width: 50px;
-            font-size: 1rem;
+        &__like {   // I should put the heart in a components file
+            width: 28px;
+            height: 26px;
+            margin: 5px 10px;
+            font-size: 25px;
+            text-align: center;
             color: white;
             -webkit-text-stroke: 1px black;
             cursor: pointer;
             &:hover {
-                animation: heart-anim 1s ease forwards;
-                
+                animation: heart-anim 500ms ease-out forwards;
+                -webkit-text-stroke: 1px transparent;
             }
         }
 
@@ -182,12 +297,6 @@
             font-size: 16px;
             font-weight: 300;
             opacity: 0.8;
-        }
-
-        i {
-            font-size: 25px;
-            margin: 5px 10px;
-            z-index: 1000; 
         }
     }
 }

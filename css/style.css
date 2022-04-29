@@ -1,3 +1,11 @@
+@keyframes heart-anim {
+  to {
+    color: transparent;
+    background-image: linear-gradient(0deg, #FF79DA 0%, #9356DC 100%);
+    -webkit-background-clip: text;
+    transform: scale(1.2);
+  }
+}
 *, ::before, ::after {
   box-sizing: border-box;
   padding: 0;
@@ -11,31 +19,50 @@ body {
 h2 {
   margin: 25px 0px;
 }
+@media (min-width: 768px) {
+  h2 {
+    margin: 20px 10px 30px;
+  }
+}
 
 a {
   text-decoration: none;
   color: black;
 }
 
-@media (min-width: 768px) {
+header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+header.container {
+  max-width: 1500px;
+}
+@media (min-width: 992px) {
   header {
-    width: 35%;
-    float: left;
+    position: relative;
+    width: 100%;
+    height: 90px;
     padding: 0px;
-    clear: both;
-    height: 70px;
+    justify-content: flex-start;
+    margin-left: 100px;
   }
 }
 header img {
-  width: 100%;
+  width: 180px;
   object-fit: contain;
-  height: 28px;
-  margin: 20px 0 10px;
+  margin: 10px 0 0px;
+  padding: 10px;
 }
 @media (min-width: 768px) {
   header img {
-    height: 35px;
-    margin: 15px 0;
+    width: 300px;
+  }
+}
+@media (min-width: 992px) {
+  header img {
+    width: 250px;
+    margin: 0px 100px;
     padding: 0;
   }
 }
@@ -52,6 +79,11 @@ body {
 
 h2 {
   margin: 25px 0px;
+}
+@media (min-width: 768px) {
+  h2 {
+    margin: 20px 10px 30px;
+  }
 }
 
 a {
@@ -70,8 +102,22 @@ footer h2 {
   color: white;
   font-size: 14px;
 }
+@media (min-width: 768px) {
+  footer h2 {
+    text-align: center;
+    font-size: 30px;
+  }
+}
 footer ul {
   list-style: none;
+}
+@media (min-width: 768px) {
+  footer ul {
+    width: 90%;
+    margin: 20px auto 10px;
+    display: flex;
+    justify-content: space-around;
+  }
 }
 footer ul li {
   margin: 5px 0;
@@ -89,38 +135,73 @@ footer a:hover {
   text-decoration: underline;
 }
 
-@keyframes heart-anim {
-  from {
-    background-size: 100%;
-  }
-  to {
-    color: transparent;
-    background-image: linear-gradient(0deg, #9356DC 0%, #FF79DA 100%);
-    background-size: 100%;
-    -webkit-background-clip: text;
+.container {
+  max-width: 1500px;
+  margin: 0 auto;
+}
+
+@media (min-width: 992px) {
+  .container-absolute {
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%);
+    max-width: 1500px;
+    margin: 0 auto;
   }
 }
+
+@keyframes heart-anim {
+  to {
+    color: transparent;
+    background-image: linear-gradient(0deg, #FF79DA 0%, #9356DC 100%);
+    -webkit-background-clip: text;
+    transform: scale(1.2);
+  }
+}
+/*============================================================================*/
+/*------------------------------- Localisation -------------------------------*/
+/*============================================================================*/
 #localisation {
+  position: relative;
   display: flex;
   justify-content: center;
   align-items: baseline;
   width: 100%;
+  padding: 17px;
   font-size: 16px;
   background-color: #EAEAEA;
   text-align: center;
   box-shadow: 0px 10px 10px -10px #AEAEAE inset;
 }
-@media (min-width: 768px) {
+@media (min-width: 992px) {
   #localisation {
-    width: 65%;
-    height: 70px;
+    position: absolute;
+    top: 20px;
+    right: 8%;
+    width: 300px;
+    height: 50px;
+    font-size: 20px;
+    box-shadow: none;
+    border-radius: 15px 15px 15px 15px;
   }
 }
 #localisation i {
-  padding: 17px;
-  font-size: 16px;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-80px);
+  padding-right: 17px;
+}
+@media (min-width: 992px) {
+  #localisation i {
+    transform: translateX(-100px);
+  }
 }
 
+/*============================================================================*/
+/*------------------------------- Description --------------------------------*/
+/*============================================================================*/
 #description {
   width: 100%;
   display: flex;
@@ -151,17 +232,38 @@ footer a:hover {
   font-size: 16px;
   color: white;
   background: linear-gradient(175deg, #FF79DA, #9356DC);
-  box-shadow: 5px 5px 5px #dddddd;
+  box-shadow: 3px 3px 8px #dddddd;
+  transition: all 150ms ease-in-out;
+  cursor: pointer;
+}
+#description button:hover {
+  transform: translateY(-4px);
+  box-shadow: 8px 8px 5px #dddddd;
 }
 
+/*============================================================================*/
+/*------------------------------------ Steps ---------------------------------*/
+/*============================================================================*/
 #steps {
   padding: 30px 20px;
 }
+@media (min-width: 768px) {
+  #steps {
+    padding: 10px 30px 30px;
+  }
+}
 #steps ol {
+  width: 100%;
   display: flex;
   flex-direction: column;
   list-style: none;
   font-size: 14px;
+}
+@media (min-width: 768px) {
+  #steps ol {
+    flex-flow: row wrap;
+    justify-content: space-between;
+  }
 }
 #steps ol .step {
   position: relative;
@@ -171,7 +273,20 @@ footer a:hover {
   margin: 0px 0px 20px 12px;
   background-color: #F6F6F6;
   border-radius: 20px;
+  text-align: center;
   box-shadow: 3px 5px 8px #EAEAEA;
+  transition: all 250ms ease-in-out;
+  cursor: pointer;
+}
+#steps ol .step:hover {
+  transform: scale(1.05);
+}
+@media (min-width: 768px) {
+  #steps ol .step {
+    width: 30%;
+    justify-content: center;
+    margin: 0px 0px 30px;
+  }
 }
 #steps ol .step:hover {
   background-color: #f2eafb;
@@ -192,20 +307,59 @@ footer a:hover {
   align-items: center;
   justify-content: center;
 }
+@media (min-width: 768px) {
+  #steps ol .step .step__purple {
+    top: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
 #steps ol .step i {
-  width: 20px;
-  margin: 0 20px 0 10px;
+  position: absolute;
+  left: 30px;
   color: #7E7E7E;
   font-size: 18px;
+}
+@media (min-width: 768px) {
+  #steps ol .step i {
+    left: 20px;
+  }
 }
 #steps ol .step p {
   font-size: 16px;
   font-weight: 500;
+  padding-left: 45px;
+}
+@media (min-width: 768px) {
+  #steps ol .step p {
+    padding-left: 0;
+    width: 74%;
+  }
 }
 
+/*============================================================================*/
+/*------------------------------- Restaurants --------------------------------*/
+/*============================================================================*/
 #restaurants {
   padding: 30px 20px;
   background-color: #F6F6F6;
+}
+@media (min-width: 768px) {
+  #restaurants {
+    padding: 10px 30px 30px;
+  }
+}
+#restaurants .restaurant-cards {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+@media (min-width: 768px) {
+  #restaurants .restaurant-cards {
+    flex-flow: row wrap;
+    justify-content: space-between;
+  }
 }
 
 .restaurant-card {
@@ -215,7 +369,18 @@ footer a:hover {
   margin-bottom: 20px;
   background-color: white;
   box-shadow: 3px 5px 8px #EAEAEA;
+  transition: all 250ms ease-in-out;
   border-radius: 15px 15px 15px 15px;
+}
+@media (min-width: 768px) {
+  .restaurant-card {
+    width: 48%;
+    margin-bottom: 40px;
+  }
+}
+.restaurant-card:hover {
+  box-shadow: 4px 6px 10px #d1d1d1;
+  transform: scale(1.03);
 }
 .restaurant-card a {
   width: 100%;
@@ -227,11 +392,21 @@ footer a:hover {
   height: 250px;
   border-radius: 15px 15px 15px 15px;
 }
+@media (min-width: 992px) {
+  .restaurant-card a {
+    height: 400px;
+  }
+}
 .restaurant-card a img {
   width: 100%;
   height: 69%;
   object-fit: cover;
   border-radius: 15px 15px 0px 0px;
+}
+@media (min-width: 992px) {
+  .restaurant-card a img {
+    height: 81%;
+  }
 }
 .restaurant-card__new-logo {
   position: absolute;
@@ -251,14 +426,18 @@ footer a:hover {
   margin: 15px;
 }
 .restaurant-card__description__like {
-  width: 50px;
-  font-size: 1rem;
+  width: 28px;
+  height: 26px;
+  margin: 5px 10px;
+  font-size: 25px;
+  text-align: center;
   color: white;
   -webkit-text-stroke: 1px black;
   cursor: pointer;
 }
 .restaurant-card__description__like:hover {
-  animation: heart-anim 1s ease forwards;
+  animation: heart-anim 500ms ease-out forwards;
+  -webkit-text-stroke: 1px transparent;
 }
 .restaurant-card__description h3 {
   font-size: 18px;
@@ -268,11 +447,6 @@ footer a:hover {
   font-size: 16px;
   font-weight: 300;
   opacity: 0.8;
-}
-.restaurant-card__description i {
-  font-size: 25px;
-  margin: 5px 10px;
-  z-index: 1000;
 }
 
 /*# sourceMappingURL=style.css.map */

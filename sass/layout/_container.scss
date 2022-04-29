@@ -1,0 +1,17 @@
+.container {
+    max-width: 1500px;
+    margin: 0 auto;
+}
+
+.container-absolute {
+
+    @media (min-width:$breakpoint-desktop){
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left : 50%;
+    transform: translate(-50%);
+    max-width: 1500px;
+    margin: 0 auto;
+    }
+}
