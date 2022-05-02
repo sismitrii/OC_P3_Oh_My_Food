@@ -55,7 +55,6 @@
     @include padding-section-mobile ;
 
     h1 {
-        width: 70%;
         margin: 10px;
         font-size: 24px;
         font-weight: 600;
@@ -187,16 +186,16 @@
             justify-content: space-between;
         }
     }
-
-
-
-
 }
 
 .restaurant-card {
     position: relative;
     margin-bottom: 20px;
     @include card-inside;
+
+    &:hover {
+        transform: scale(1.03);
+    }
 
     @media (min-width : $breakpoint-tablet){
         width: 48%;

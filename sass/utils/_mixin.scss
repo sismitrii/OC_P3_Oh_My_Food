@@ -29,7 +29,7 @@
     @include border-radius ;
     &:hover {
         box-shadow: 4px 6px 10px darken(map-get($color, bg-localisation), 10);
-        transform: scale(1.03);
+        
     }
 }
 
