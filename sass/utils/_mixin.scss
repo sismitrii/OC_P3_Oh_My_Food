@@ -1,11 +1,36 @@
 @import '../utils/variables';
 
+@mixin font-family($font-f : map-get($font, text)){
+    @if ($font-f == map-get($font, text)){
+        font-family: $font-f, Arial, Helvetica, sans-serif;
+    }@else{
+        font-family: $font-f, 'Comic Sans Ms', 'Comic Sans', Arial, serif;
+    }
+}
+
 @mixin padding-section-mobile {
     padding: 30px 20px;
 }
 
 @mixin padding-section-tablet {
     padding: 10px 30px 30px;
+}
+
+@mixin padding-title-menu {
+    padding: 0px 10px;
+}
+
+@mixin card-inside {       // Give it an other name !!!!!!!
+    display: flex;
+    width: 100%;
+    background-color: white;
+    box-shadow: 3px 5px 8px map-get($color, bg-localisation);
+    transition: all 250ms ease-in-out;
+    @include border-radius ;
+    &:hover {
+        box-shadow: 4px 6px 10px darken(map-get($color, bg-localisation), 10);
+        transform: scale(1.03);
+    }
 }
 
 @mixin flex-center {

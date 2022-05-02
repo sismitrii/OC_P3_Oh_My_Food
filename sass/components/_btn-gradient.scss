@@ -1,0 +1,19 @@
+@import '../utils/variables';
+
+.btn-gradient {
+    padding: 15px;
+    border-radius: 30px;
+    outline: none;
+    border: none;
+    font-size: 16px;
+    color: white;
+    background: linear-gradient( 175deg, map-get($color, secondary), map-get($color, primary));
+    box-shadow: 3px 3px 8px darken(map-get($color, bg-section-grey), 10);
+    transition: all 150ms ease-in-out;
+    cursor: pointer;
+
+    &:hover {
+        transform: translateY(-4px);
+        box-shadow: 8px 8px 5px darken(map-get($color, bg-section-grey), 10);
+    }
+}

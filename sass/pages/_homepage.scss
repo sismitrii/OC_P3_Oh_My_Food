@@ -68,22 +68,7 @@
     }
 
     button {
-        padding: 15px;
         margin: 30px;
-        border-radius: 30px;
-        outline: none;
-        border: none;
-        font-size: 16px;
-        color: white;
-        background: linear-gradient( 175deg, map-get($color, secondary), map-get($color, primary));
-        box-shadow: 3px 3px 8px darken(map-get($color, bg-section-grey), 10);
-        transition: all 150ms ease-in-out;
-        cursor: pointer;
-
-        &:hover {
-            transform: translateY(-4px);
-            box-shadow: 8px 8px 5px darken(map-get($color, bg-section-grey), 10);
-        }
     }
 }
 
@@ -210,23 +195,15 @@
 
 .restaurant-card {
     position: relative;
-    display: flex;
-    width: 100%;
     margin-bottom: 20px;
-    background-color: white;
-    box-shadow: 3px 5px 8px map-get($color, bg-localisation );
-    transition: all 250ms ease-in-out;
-    @include border-radius ;
+    @include card-inside;
 
     @media (min-width : $breakpoint-tablet){
         width: 48%;
         margin-bottom: 40px;
     }
 
-    &:hover {
-        box-shadow: 4px 6px 10px darken(map-get($color, bg-localisation), 10);
-        transform: scale(1.03);
-    }
+
 
     a {
         width: 100%;
@@ -273,20 +250,7 @@
         align-items: flex-start;
         margin: 15px;
 
-        &__like {   // I should put the heart in a components file
-            width: 28px;
-            height: 26px;
-            margin: 5px 10px;
-            font-size: 25px;
-            text-align: center;
-            color: white;
-            -webkit-text-stroke: 1px black;
-            cursor: pointer;
-            &:hover {
-                animation: heart-anim 500ms ease-out forwards;
-                -webkit-text-stroke: 1px transparent;
-            }
-        }
+
 
         h3 {
             font-size: 18px;

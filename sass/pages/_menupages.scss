@@ -1,0 +1,158 @@
+@import '../utils/variables';
+@import '../utils/mixin';
+@import '../utils/keyframes';
+
+
+/*============================================================================*/
+/*---------------------------------- Banner ----------------------------------*/ 
+/*============================================================================*/
+
+#banner {
+    .container {
+        width: 100%;
+        height: 280px;
+        background-color: map-get($color, bg-section-grey);
+
+        @media (min-width:$breakpoint-desktop){
+            height: 400px;
+        }
+
+        img {
+            width : 100%;
+            height: 280px;
+            object-fit: cover;
+
+            @media (min-width:$breakpoint-desktop){
+                height: 400px;
+            }
+
+        }
+    }
+}
+
+
+/*============================================================================*/
+/*----------------------------------- Menu -----------------------------------*/ 
+/*============================================================================*/
+ 
+#menu {
+    position: relative;
+    top : -50px;
+    background-color: map-get($color, bg-section-grey);
+    border-radius: 40px 40px 0px 0px;
+    padding: 40px 10px 0px;
+
+    .menu__header {
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+        @include padding-title-menu;
+        margin-bottom: 25px;
+
+        h1 {
+            @include font-family(map-get($font, title));
+            font-size: 28px;
+            font-weight: 300;
+        }
+    }
+
+    .menu__part {
+        h2 {
+            text-transform: uppercase;
+            font-weight: 300;
+            font-size: 16px;
+            @include padding-title-menu;
+            margin:0px 0px 5px 0px;
+        }
+
+        &__under-title-line {
+            width: 40px;
+            height: 3px;
+            background-color: map-get($color, tertiary);
+            margin:0px 0px 10px 10px;
+
+        }
+
+        &__plates {
+            display: flex;
+            flex-direction: column;
+            
+        }
+    }
+}
+
+
+.menu__part__plate {
+    margin-bottom: 15px;
+    @include card-inside;
+    overflow: hidden;
+
+    &:hover .menu__part__plate__right div{
+        width: $bloc-check-width;
+        transform: translateX(0);
+        
+        i {
+            transform: rotate(360deg);
+        }
+    }
+    
+
+    &__name{
+        width: 100%;
+        overflow: hidden;
+        white-space: nowrap;               // why is it working here but not in the h3 or p
+        padding: 15px 0px 15px 15px;
+
+        h3{
+            font-size: 18px;
+            font-weight: 500;
+            margin-bottom: 5px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        p{
+            font-size: 14px;
+            font-weight: 300;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+    }
+
+    &__right {
+        //position: relative;
+        //left: 17%;
+        //transform: translateX(60px);
+        //width: 34vh;
+        display: flex;
+        align-items: stretch;
+        border-radius: 0px $default-radius $default-radius 0px;
+
+        transition: all 250ms ease-in-out;
+
+        p {
+            width: $bloc-check-width;
+            align-self: flex-end;
+            padding: 15px 5px;
+            font-weight: 500;
+        }
+
+        div {
+            transition: all 250ms ease-in-out;
+            width:0;
+            transform: translateX($bloc-check-width);
+            @include flex-center;
+            background-color: map-get($color, tertiary);
+            border-radius: 0px $default-radius $default-radius 0px;
+
+            i {
+                transform: rotate(180deg);
+                font-size: 20px;
+                background-color: map-get($color, tertiary );
+                color: white;
+                transition: all 500ms 100ms ease-in-out;
+            }
+
+        }
+    }
+}
+

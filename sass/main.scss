@@ -2,8 +2,10 @@
 @import './utils/mixin';
 @import './utils/keyframes';
 @import './base/general';
-
+@import './components/like';
+@import './components/btn-gradient';
 @import './layout/header';
 @import './layout/footer';
 @import './layout/container';
 @import './pages/_homepage';
+@import './pages/menupages';
