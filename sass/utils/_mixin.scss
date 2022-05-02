@@ -42,3 +42,13 @@
 @mixin border-radius ($radius : $default-radius) {
     border-radius: $default-radius $default-radius $radius $radius;
 }
+
+@mixin heart-bg {
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+@mixin heart-transition {
+    transition: all 250ms ease-in-out;
+}
