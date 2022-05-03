@@ -2,13 +2,6 @@
 @import '../utils/mixin';
 @import '../utils/keyframes';
 
-
-
-
-.before-loader-container {
-    opacity: 0.2;
-    animation: opacity 1s 3s ease-in-out forwards;
-}
 /*============================================================================*/
 /*------------------------------- Localisation -------------------------------*/ 
 /*============================================================================*/
@@ -33,9 +26,8 @@
         font-size: 20px;
         box-shadow: none;
         @include border-radius;
-
-
     }
+
     i {
         position: absolute;
         left: 50% ;
@@ -149,6 +141,7 @@
                     transform: translateX(-50%);
                 }
             }
+
             i {
                 position: absolute;
                 left: 30px; 
@@ -177,11 +170,8 @@
 /*============================================================================*/
 
 #restaurants {
-    opacity: 0;
     @include padding-section-mobile;
     background-color: map-get($color, bg-section-grey);
-
-    animation: opacity 1s 3s ease-in-out forwards;
 
     @media (min-width : $breakpoint-tablet){
         @include padding-section-tablet;
@@ -201,7 +191,7 @@
 .restaurant-card {
     position: relative;
     margin-bottom: 20px;
-    @include card-inside;
+    @include card-inside;    // Give it an other name !!!!!!!
 
     &:hover {
         transform: scale(1.03);
@@ -211,8 +201,6 @@
         width: 48%;
         margin-bottom: 40px;
     }
-
-
 
     a {
         width: 100%;
@@ -236,8 +224,6 @@
                 height: 81%;
             }
         }
-
-        
     }
 
     &__new-logo {
@@ -249,8 +235,7 @@
         border-radius: 3px;
         font-size: 14px;
         font-weight: 500;
-        color : darken(map-get($color, tertiary), 40);   
-
+        color : darken(map-get($color, tertiary), 40);
     }
 
     &__description {
@@ -259,14 +244,12 @@
         align-items: flex-start;
         margin: 15px;
 
-
-
         h3 {
             font-size: 18px;
         }
 
         p{
-            margin:5px 0 ;
+            margin: 5px 0;
             font-size: 16px;
             font-weight: 300;
             opacity: 0.8;

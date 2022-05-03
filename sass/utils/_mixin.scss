@@ -1,5 +1,9 @@
 @import '../utils/variables';
 
+/*====================================================================*/
+/*------------------------------- Font -------------------------------*/ 
+/*====================================================================*/
+
 @mixin font-family($font-f : map-get($font, text)){
     @if ($font-f == map-get($font, text)){
         font-family: $font-f, Arial, Helvetica, sans-serif;
@@ -7,6 +11,22 @@
         font-family: $font-f, 'Comic Sans Ms', 'Comic Sans', Arial, serif;
     }
 }
+
+/*====================================================================*/
+/*----------------------------- General ------------------------------*/
+/*====================================================================*/
+
+@mixin flex-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@mixin border-radius ($radius : $default-radius) {
+    border-radius: $default-radius $default-radius $radius $radius;
+}
+
+/*------------------------ Padding -------------------------*/
 
 @mixin padding-section-mobile {
     padding: 30px 20px;
@@ -20,12 +40,17 @@
     padding: 0px 10px;
 }
 
+/*====================================================================*/
+/*----------------------------- Element ------------------------------*/
+/*====================================================================*/
+
 @mixin card-inside {       // Give it an other name !!!!!!!
     display: flex;
     width: 100%;
     background-color: white;
     box-shadow: 3px 5px 8px map-get($color, bg-localisation);
     transition: all 250ms ease-in-out;
+    cursor: pointer;
     @include border-radius ;
     &:hover {
         box-shadow: 4px 6px 10px darken(map-get($color, bg-localisation), 10);
@@ -33,15 +58,11 @@
     }
 }
 
-@mixin flex-center {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
+/*====================================================================*/
+/*--------------------------- Animation ------------------------------*/
+/*====================================================================*/
 
-@mixin border-radius ($radius : $default-radius) {
-    border-radius: $default-radius $default-radius $radius $radius;
-}
+/*--------------------------- Heart ------------------------------*/
 
 @mixin heart-bg {
     background-clip: text;
@@ -53,12 +74,17 @@
     transition: all 250ms ease-in-out;
 }
 
+/*--------------------------- Loader ------------------------------*/
+
 @mixin bar-animation ($name, $timing, $delay) {
     transform-origin: center bottom;
     animation: $name $timing $delay cubic-bezier(.01,.72,.21,.92) infinite;
-
 }
 
 @mixin bar-animation-part ($scaling, $timing : $slow-bar) {
     transform: scaleY($scaling); transition-timing-function: $timing;
+}
+
+@mixin opacity-for-loader ($opacity-animation){
+    animation: $opacity-animation $animation-opacity-timing $timing-of-loader ease-in-out forwards;
 }

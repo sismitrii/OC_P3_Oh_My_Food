@@ -26,7 +26,6 @@
             @media (min-width:$breakpoint-desktop){
                 height: 400px;
             }
-
         }
     }
 }
@@ -78,7 +77,6 @@
             height: 3px;
             background-color: map-get($color, tertiary);
             margin:0px 0px 10px 10px;
-
         }
 
         &__plates {
@@ -90,11 +88,9 @@
                 justify-content: center;
                 justify-content: space-between;
             }
-            
         }
     }
 
-    
     .menu__btn {
         width: 100%;
         text-align: center;
@@ -139,6 +135,7 @@
             overflow: hidden;
             text-overflow: ellipsis;
         }
+
         p{
             font-size: 14px;
             font-weight: 300;
@@ -148,10 +145,6 @@
     }
 
     &__right {
-        //position: relative;
-        //left: 17%;
-        //transform: translateX(60px);
-        //width: 34vh;
         display: flex;
         align-items: stretch;
         border-radius: 0px $default-radius $default-radius 0px;
@@ -180,7 +173,6 @@
                 color: white;
                 transition: all 500ms 100ms ease-in-out;
             }
-
         }
     }
 }

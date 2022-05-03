@@ -1,6 +1,9 @@
 @import './variables';
 @import './mixin';
 
+/*============================================================================*/
+/*---------------------------------- Heart -----------------------------------*/ 
+/*============================================================================*/
 @keyframes heart-anim {
     to {
       color: transparent;
@@ -10,6 +13,13 @@
     }
 }
 
+
+/*============================================================================*/
+/*---------------------------------- Loader ----------------------------------*/ 
+/*============================================================================*/
+
+
+/*--------------------------- Ball -------------------------------*/
 
 @keyframes deplacement-lateral { 
   0%{left: 20px;}
@@ -28,6 +38,8 @@
   80%{transform: scale(0.85, 1);}
   100%{top: 41px; transform: scale(1.2,0.6);}
 }
+
+/*--------------------------- Bar -------------------------------*/
 
 @keyframes ecrase-bar-central {
 40% {@include bar-animation-part($scaling : 1);}
@@ -55,6 +67,7 @@
 10%, 100%{@include bar-animation-part($scaling : 1, $timing : ease-in);}
 }
 
+/*--------------------------- Loader opacity -------------------------------*/
 @keyframes opacity {
   100%{opacity: 1;}
 }
@@ -62,7 +75,3 @@
 @keyframes no-opacity {
   100%{opacity: 0; z-index: -1;}
 }
-
-/* LA ball doit subir 2 animations : une en x linear et l'autre en Y avec le gros cubic-bzier*/
-/* toute les 2s la balle se deplace de left 25px à left 95px.
-/* tout les 1s la balle monte de top 40px à 30px( a voir) puis redescend de 30px à 40px*/

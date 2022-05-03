@@ -8,9 +8,8 @@ footer {
     padding: 20px;
 
     h2{
-        //padding: 10px 0px;
         margin: 0 0 10px 0;
-        font-family: map-get($font, title), 'Comic Sans Ms', 'Comic Sans', sans-serif;
+        @include font-family($font-f : map-get($font, title));
         color: white;
         font-size: 14px;
 
@@ -20,21 +19,19 @@ footer {
         }
     }
 
-
     ul {
         list-style: none;
 
         @media (min-width: $breakpoint-tablet) {
             width: 90%;
-            margin:20px auto 10px;
+            margin: 20px auto 10px;
             display: flex;
             justify-content: space-around;
         }
+
         li {
             margin: 5px 0;
             font-size: 13px;
-
-
 
             i {
                 font-size: 10px;
@@ -44,11 +41,10 @@ footer {
         }
     }
     
-    a{
+    a {
         color: white;
         &:hover {
             text-decoration: underline;
         }
-
     }
 }
