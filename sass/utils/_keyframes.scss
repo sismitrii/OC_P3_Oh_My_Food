@@ -1,7 +1,6 @@
 @import './variables';
 
 @keyframes heart-anim {
-
     to {
       color: transparent;
       background-image: linear-gradient(0deg, map-get($color, secondary) 0%, map-get($color, primary) 100%);
@@ -9,3 +8,60 @@
       transform: scale(1.2);
     }
 }
+
+
+@keyframes deplacement-lateral { 
+  0%{left: 20px;}
+  10%{left: 24px;}
+  20%{left: 32px;}
+  50%{left: 60px;}
+  80%{left: 88px;}
+  90%{left: 96px;}
+  100%{left: 100px;}
+}
+
+@keyframes deplacement-vertical {
+  0%{top: 41px; transform: scale(1.2,0.6);}
+  40%{transform: scale(0.85, 1);}
+  50%{top: 0px; transform: scale(1,1);}
+  80%{transform: scale(0.85, 1);}
+  100%{top: 41px; transform: scale(1.2,0.6);}
+}
+
+@keyframes ecrase-bar-central {
+40% {@include bar-animation-part($scaling : 1);}
+41% {@include bar-animation-part($scaling : 0.95);}
+42% {@include bar-animation-part($scaling : 0.925);}
+47% {@include bar-animation-part($scaling : 0.91);}
+48%,52.6%{@include bar-animation-part($scaling : 0.9, $timing : ease-in);}
+53%{@include bar-animation-part($scaling : 0.905, $timing : ease-in);}
+56%{@include bar-animation-part($scaling : 0.920, $timing : $fast-bar);}
+58%{@include bar-animation-part($scaling : 0.94, $timing : $fast-bar);}
+59%{@include bar-animation-part($scaling : 0.965, $timing : $fast-bar);}
+60%, 100%{@include bar-animation-part($scaling : 1, $timing : ease-in);}
+}
+
+@keyframes ecrase-bar {
+0%{@include bar-animation-part($scaling : 1);}
+0.5% {@include bar-animation-part($scaling : 0.95);}
+1% {@include bar-animation-part($scaling : 0.925);}
+3.5% {@include bar-animation-part($scaling : 0.91);}
+4%,6.3%{@include bar-animation-part($scaling : 0.9, $timing : ease-in);}
+6.5%{@include bar-animation-part($scaling : 0.905, $timing : ease-in);}
+8%{@include bar-animation-part($scaling : 0.920, $timing : $fast-bar);}
+9%{@include bar-animation-part($scaling : 0.94, $timing : $fast-bar);}
+9.5%{@include bar-animation-part($scaling : 0.965, $timing : $fast-bar);}
+10%, 100%{@include bar-animation-part($scaling : 1, $timing : ease-in);}
+}
+
+@keyframes opacity {
+  100%{opacity: 1;}
+}
+
+@keyframes no-opacity {
+  100%{opacity: 0; z-index: -1;}
+}
+
+/* LA ball doit subir 2 animations : une en x linear et l'autre en Y avec le gros cubic-bzier*/
+/* toute les 2s la balle se deplace de left 25px à left 95px.
+/* tout les 1s la balle monte de top 40px à 30px( a voir) puis redescend de 30px à 40px*/

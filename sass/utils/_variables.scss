@@ -19,3 +19,7 @@ $breakpoint-desktop : 992px;
 
 $default-radius : 15px;
 
+
+$slow-bar : cubic-bezier(.01,.86,.16,1);
+$fast-bar : cubic-bezier(.95,0,1,.3);
+

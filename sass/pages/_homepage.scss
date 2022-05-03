@@ -2,6 +2,13 @@
 @import '../utils/mixin';
 @import '../utils/keyframes';
 
+
+
+
+.before-loader-container {
+    opacity: 0.2;
+    animation: opacity 1s 3s ease-in-out forwards;
+}
 /*============================================================================*/
 /*------------------------------- Localisation -------------------------------*/ 
 /*============================================================================*/
@@ -170,8 +177,11 @@
 /*============================================================================*/
 
 #restaurants {
+    opacity: 0;
     @include padding-section-mobile;
     background-color: map-get($color, bg-section-grey);
+
+    animation: opacity 1s 3s ease-in-out forwards;
 
     @media (min-width : $breakpoint-tablet){
         @include padding-section-tablet;

@@ -1,0 +1,79 @@
+@import '../utils/variables';
+@import '../utils/mixin';
+@import '../utils/keyframes';
+
+
+.loader-container {         // lorsque l'on descend dans la page pendant le chargement on ne voit plus le loader
+    position: absolute;
+    z-index: 1000;
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    animation: no-opacity 1s 3s ease-in-out forwards;
+
+
+    .loader {
+        width: 150px;
+        height: 150px;
+        position: relative;
+        top : -50px;
+        //transform: scale(1);
+
+        .ball {
+            position: absolute;
+            top: 30px;
+            left: 20px;
+            width :20px;
+            height: 20px;
+            border-radius: 50%;
+            background-color: map-get($color, primary);
+
+            animation: deplacement-vertical 1000ms cubic-bezier(.72,.23,.28,.86) infinite, deplacement-lateral 2000ms linear infinite alternate ;
+        }
+
+        .bars {
+            position: absolute;
+            top: 50px;
+            left: 10px;
+            display: flex;
+            justify-content: space-between;
+
+            .bar {
+                width: 20px;
+                height: 60px;
+                margin: 0 10px;
+            }
+            
+
+            .bar:nth-child(1){
+                background-color: darken(map-get($color, bg-section-grey),20);
+                @include bar-animation($name : ecrase-bar, $timing : 4000ms, $delay: 3800ms);
+            }
+            
+            .bar:nth-child(2){
+                background-color: map-get($color, secondary);
+                @include bar-animation($name : ecrase-bar-central, $timing : 2000ms, $delay: 0ms);
+            }
+            
+            .bar:nth-child(3){
+                background-color: map-get($color, tertiary);
+                @include bar-animation($name : ecrase-bar, $timing : 4000ms, $delay: 1800ms);
+            }
+        }
+    }
+
+}
+
+
+
+
+
+
+
+
+
+

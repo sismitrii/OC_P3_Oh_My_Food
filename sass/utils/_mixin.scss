@@ -52,3 +52,13 @@
 @mixin heart-transition {
     transition: all 250ms ease-in-out;
 }
+
+@mixin bar-animation ($name, $timing, $delay) {
+    transform-origin: center bottom;
+    animation: $name $timing $delay cubic-bezier(.01,.72,.21,.92) infinite;
+
+}
+
+@mixin bar-animation-part ($scaling, $timing : $slow-bar) {
+    transform: scaleY($scaling); transition-timing-function: $timing;
+}
