@@ -84,10 +84,23 @@
             flex-direction: column;
 
             @media (min-width: $breakpoint-desktop){
+                opacity: 0;
                 flex-flow: row wrap;
-                justify-content: center;
                 justify-content: space-between;
+                animation: slideUp 1s forwards;
             }
+        }
+    }
+
+    .main-course .menu__part__plates {
+        @media (min-width : $breakpoint-desktop) {
+            animation-delay: 200ms;
+        }  
+    }
+
+    .dessert .menu__part__plates {
+        @media (min-width : $breakpoint-desktop){
+            animation-delay: 400ms;
         }
     }
 
@@ -103,13 +116,29 @@
 
 
 .menu__part__plate {
+    opacity: 0;
     margin-bottom: 15px;
     @include card-inside;
     overflow: hidden;
 
+    animation: slideUp 1s forwards;
+
     @media (min-width : $breakpoint-desktop){
+        opacity: 1;
+        animation: none;
         margin-bottom: 50px;
         width: 32%;
+    }
+
+    &:nth-child(2){
+        animation-delay: 200ms;
+    }
+    &:nth-child(3){
+        animation-delay: 400ms;
+    }
+
+    &:nth-child(4) {
+        animation-delay: 600ms;
     }
 
     &:hover .menu__part__plate__right div{
