@@ -1,6 +1,8 @@
 @import '../utils/_variables';
 
-*, ::before, ::after {
+*,
+::before,
+::after {
     box-sizing: border-box;
     padding: 0;
     margin: 0;
@@ -13,8 +15,8 @@ body {
 h2 {
     margin: 25px 0px;
 
-    @media (min-width:$breakpoint-tablet){
-        margin : 20px 10px 30px;
+    @media (min-width:$breakpoint-tablet) {
+        margin: 20px 10px 30px;
     }
 }
 

@@ -1,13 +1,15 @@
 @import '../utils/variables';
 
 /*====================================================================*/
-/*------------------------------- Font -------------------------------*/ 
+/*------------------------------- Font -------------------------------*/
 /*====================================================================*/
 
-@mixin font-family($font-f : map-get($font, text)){
-    @if ($font-f == map-get($font, text)){
+@mixin font-family($font-f : map-get($font, text)) {
+    @if ($font-f==map-get($font, text)) {
         font-family: $font-f, Arial, Helvetica, sans-serif;
-    }@else{
+    }
+
+    @else {
         font-family: $font-f, 'Comic Sans Ms', 'Comic Sans', Arial, serif;
     }
 }
@@ -44,17 +46,18 @@
 /*----------------------------- Element ------------------------------*/
 /*====================================================================*/
 
-@mixin card-inside {       // Give it an other name !!!!!!!
+@mixin card-inside {
     display: flex;
     width: 100%;
     background-color: white;
     box-shadow: 3px 5px 8px map-get($color, bg-localisation);
     transition: all 250ms ease-in-out;
     cursor: pointer;
-    @include border-radius ;
+    @include border-radius;
+
     &:hover {
         box-shadow: 4px 6px 10px darken(map-get($color, bg-localisation), 10);
-        
+
     }
 }
 
@@ -78,13 +81,14 @@
 
 @mixin bar-animation ($name, $timing, $delay) {
     transform-origin: center bottom;
-    animation: $name $timing $delay cubic-bezier(.01,.72,.21,.92) infinite;
+    animation: $name $timing $delay cubic-bezier(.01, .72, .21, .92) infinite;
 }
 
 @mixin bar-animation-part ($scaling, $timing : $slow-bar) {
-    transform: scaleY($scaling); transition-timing-function: $timing;
+    transform: scaleY($scaling);
+    transition-timing-function: $timing;
 }
 
-@mixin opacity-for-loader ($opacity-animation){
+@mixin opacity-for-loader ($opacity-animation) {
     animation: $opacity-animation $animation-opacity-timing $timing-of-loader ease-in-out forwards;
 }

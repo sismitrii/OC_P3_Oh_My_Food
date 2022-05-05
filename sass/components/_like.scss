@@ -1,6 +1,5 @@
 @import '../utils/mixin';
 
-
 .restaurant-card__description__like {
     position: relative;
     width: 28px;
@@ -11,15 +10,10 @@
     @include heart-transition;
     cursor: pointer;
 
-    &:hover {
-        transform: scale(1.3);
-        .not-visible {
-            opacity: 1;
-        }
-        .visible {
-            @include heart-bg;
-            background-image: linear-gradient(0deg, map-get($color, secondary) 0%, map-get($color, primary) 100%);
-        }
+    i {
+        position: absolute;
+        left: 0;
+        top: 0;
     }
 
     .not-visible {
@@ -34,9 +28,16 @@
         color: black;
     }
 
-    i {
-        position: absolute;
-        left: 0;
-        top: 0;
+    &:hover {
+        transform: scale(1.3);
+
+        .not-visible {
+            opacity: 1;
+        }
+
+        .visible {
+            @include heart-bg;
+            background-image: linear-gradient(0deg, map-get($color, secondary) 0%, map-get($color, primary) 100%);
+        }
     }
 }

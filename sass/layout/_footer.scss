@@ -3,11 +3,11 @@
 @import '../base/general';
 
 footer {
-    width : 100%;
+    width: 100%;
     background-color: map-get($color, bg-footer);
     padding: 20px;
 
-    h2{
+    h2 {
         margin: 0 0 10px 0;
         @include font-family($font-f : map-get($font, title));
         color: white;
@@ -40,9 +40,10 @@ footer {
             }
         }
     }
-    
+
     a {
         color: white;
+
         &:hover {
             text-decoration: underline;
         }
