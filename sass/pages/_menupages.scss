@@ -157,19 +157,20 @@
         white-space: nowrap;
         padding: 15px 0px 15px 15px;
 
+        >*{
+            text-overflow: ellipsis;
+            overflow: hidden;
+        }
+
         h3 {
             font-size: 18px;
             font-weight: 500;
             margin-bottom: 5px;
-            overflow: hidden;
-            text-overflow: ellipsis;
         }
 
         p {
             font-size: 14px;
             font-weight: 300;
-            overflow: hidden;
-            text-overflow: ellipsis;
         }
     }
 

@@ -8,7 +8,7 @@
     to {
       color: transparent;
       background-image: linear-gradient(0deg, map-get($color, secondary) 0%, map-get($color, primary) 100%);
-      -webkit-background-clip: text;
+      background-clip: text;
       transform: scale(1.2);
     }
 }

@@ -1,6 +1,7 @@
 @import '../utils/mixin';
 
 .restaurant-card__description__like {
+    z-index: 1;
     position: relative;
     width: 28px;
     height: 26px;
